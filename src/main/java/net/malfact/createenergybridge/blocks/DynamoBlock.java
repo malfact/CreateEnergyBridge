@@ -1,36 +1,32 @@
-package net.malfact.createenergybridge.common.blocks;
+package net.malfact.createenergybridge.blocks;
 
+import com.simibubi.create.foundation.block.ITE;
+import com.simibubi.create.modules.contraptions.base.DirectionalAxisKineticBlock;
 import com.simibubi.create.modules.contraptions.base.DirectionalKineticBlock;
-import net.malfact.createenergybridge.common.tiles.DynamoTile;
+import net.malfact.createenergybridge.init.ModTileEntityTypes;
+import net.malfact.createenergybridge.tileentity.DynamoTileEntity;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
-import com.simibubi.create.foundation.block.ITE;
 
-public class DynamoBlock extends DirectionalKineticBlock implements ITE<DynamoTile>{
+public class DynamoBlock extends DirectionalKineticBlock implements ITE<DynamoTileEntity>{
 
-    public DynamoBlock() {
-        super(Properties.from(Blocks.ANDESITE));
+    public DynamoBlock(Properties properties) {
+        super(properties);
     }
 
     @Override
     public TileEntity createTileEntity(BlockState blockState, IBlockReader iBlockReader) {
-        return new DynamoTile();
+        return ModTileEntityTypes.DYNAMO.create();
     }
 
     @Override
     public boolean hasIntegratedCogwheel(IWorldReader world, BlockPos pos, BlockState state) {
         return true;
-    }
-
-    @Override
-    public Direction.Axis getRotationAxis(BlockState state) {
-        return state.get(FACING).getAxis();
     }
 
     @Override
@@ -44,7 +40,12 @@ public class DynamoBlock extends DirectionalKineticBlock implements ITE<DynamoTi
     }
 
     @Override
-    public Class<DynamoTile> getTileEntityClass(){
-        return DynamoTile.class;
+    public Class<DynamoTileEntity> getTileEntityClass(){
+        return DynamoTileEntity.class;
+    }
+
+    @Override
+    public Direction.Axis getRotationAxis(BlockState state) {
+        return state.get(FACING).getAxis();
     }
 }

@@ -1,0 +1,14 @@
+{
+  "forgemarker": 1,
+  "defaults": {
+    "model": "createenergybridge:block/dynamo"
+  },
+  "variants": {
+    "facing=south": { "model": "createenergybridge:block/dynamo", "x": 90, "y": 180 },
+    "facing=north": { "model": "createenergybridge:block/dynamo", "x": 90 },
+    "facing=west": { "model": "createenergybridge:block/dynamo", "x": 90, "y": 270 },
+    "facing=up": { "model": "createenergybridge:block/dynamo" },
+    "facing=down": { "model": "createenergybridge:block/dynamo", "x": 180 },
+    "facing=east": { "model": "createenergybridge:block/dynamo", "x": 90, "y": 90 }
+  }
+}

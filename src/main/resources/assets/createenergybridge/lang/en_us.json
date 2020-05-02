@@ -1,4 +1,5 @@
 {
+  "block.createenergybridge.dynamo": "Andesite Dynamo",
   "item.createenergybridge.example_item": "Test Item",
   "itemGroup.createenergybridge": "Create Energy Bridge"
 }

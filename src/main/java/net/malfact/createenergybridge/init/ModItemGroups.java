@@ -3,14 +3,13 @@ package net.malfact.createenergybridge.init;
 import net.malfact.createenergybridge.CreateEnergyBridge;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 
 import java.util.function.Supplier;
 
-public class CEBItemGroups {
+public class ModItemGroups {
 
     public static final ItemGroup CREATE_ENERGY_BRIDGE_ITEM_GROUP = new CEBItemGroup(CreateEnergyBridge.MOD_ID,
-            () -> new ItemStack(CEBItems.TEST_ITEM));
+            () -> new ItemStack(ModItems.TEST_ITEM));
 
     public static class CEBItemGroup extends ItemGroup {
 
